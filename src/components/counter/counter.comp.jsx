@@ -1,8 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 export default function Counter() {
   const BASE_COUNT_STATE = 0;
-  const [count, setCount] = useState(BASE_COUNT_STATE);
+  const [count, setCount] = useState(() => JSON.parse(localStorage.getItem('count')));
+
+  useEffect(() => {
+    localStorage.setItem('count', JSON.stringify(count));
+  }, [count]);
 
   return (
     <div>
