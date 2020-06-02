@@ -12,7 +12,7 @@ function App() {
       </header>
       <main className="app-main">
         <Card>
-          <Counter />
+          <Counter reRender={false} />
         </Card>
         <Card>
           <SignUp />
